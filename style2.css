@@ -1,0 +1,23 @@
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(./images/wish_img.jpg);
+  background-size: cover;
+  color: white;
+}
+
+.container {
+  margin-top: 300px;
+}
+
+#main-title {
+  background-color: rgba(255, 255, 255, 0.301);
+  border-radius: 30px;
+  padding: 10px;
+  width: 650px;
+}
+
+.btn {
+  width: 300px;
+  font-size: 20px;
+  margin-left: 175px;
+}

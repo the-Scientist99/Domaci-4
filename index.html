@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="./style1.css">
+    <title>Deda Mraze, Deda Mraze</title>
+</head>
+
+<body>
+    <div class="container form-wrapper">
+        <h2 class="text-center mb-5">Napiši Želju Deda Mrazu!</h2>
+        <form action="sacuvaj_zelju.php" method="POST">
+            <div class="row mb-3">
+                <div class="col">
+                    <input type="text" name="ime" class="form-control" placeholder="Unesi ime...">
+                </div>
+            </div>
+            <div class="row mb-3    ">
+                <div class="col">
+                    <input type="text" name="prezime" class="form-control" placeholder="Unesi prezime...">
+                </div>
+            </div>
+            <div class="row  mb-3">
+                <div class="col">
+                    <select name="grad" class="form-control">
+                        <option value="" selected>Izaberi grad</option>
+                        <option value="Podgorica">Podgorica</option>
+                        <option value="Nikšic">Nikšić</option>
+                        <option value="Pljevlja">Pljevlja</option>
+                        <option value="Bijelo Polje">Bijelo Polje</option>
+                        <option value="Cetinje">Cetinje</option>
+                        <option value="Bar">Bar</option>
+                        <option value="Herceg Novi">Herceg Novi</option>
+                        <option value="Berane">Berane</option>
+                        <option value="Budva">Budva</option>
+                        <option value="Ulcinj">Ulcinj</option>
+                        <option value="Tivat">Tivat</option>
+                        <option value="Rožaje">Rožaje</option>
+                        <option value="Kotor">Kotor</option>
+                        <option value="Danilovgrad">Danilovgrad</option>
+                        <option value="Mojkovac">Mojkovac</option>
+                        <option value="Plav">Plav</option>
+                        <option value="Kolašin">Kolašin</option>
+                        <option value="Žabljak">Žabljak</option>
+                        <option value="Plužine">Plužine</option>
+                        <option value="Andrijevica">Andrijevica</option>
+                        <option value="Šavnik">Šavnik</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="form-check col text-center">
+                    <input class="form-check-input" type="checkbox" name="dbr_zao" id="gridCheck1">
+                    <label class="form-check-label ml-1" for="gridCheck1">
+                        Da li si bio dobar / dobra ove godine?
+                    </label>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col">
+                    <textarea name="zelja" rows="5" class="form-control" placeholder="Napiši želje..."></textarea>
+                </div>
+            </div>
+            <div class="alert alert-danger my-2 text-center" id="error_msg" role="alert">
+                Unesi sve podatke!
+            </div>
+            <div class="row mt-5">
+                <div class="col text-center">
+                    <button type="submit" class="btn btn-success">Pošalji želju</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="./app.js"></script>
+</body>
+
+</html>
