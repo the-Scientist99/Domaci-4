@@ -15,29 +15,18 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $prezime = $_POST['prezime'];
         $grad = $_POST['grad'];
         $zelja = $_POST['zelja'];
-        // Razbijamo string na zasebne karaktere
-        $temp_ime = str_split($ime);
-        $temp_prez = str_split($prezime);
 
         // Provjeravamo da li se ime i prezime sastoje isključivo od slova
-        foreach ($temp_ime as $letter) {
-            if (('a' <= $letter && $letter <= 'ž') || ('A' <= $letter && $letter <= 'Ž')) {
-                continue;
-            }
-            header('location: ./index.html?msg=error');
-        }
-        foreach ($temp_prez as $letter) {
-            if (('a' <= $letter && $letter <= 'ž') || ('A' <= $letter && $letter <= 'Ž')) {
-                continue;
-            }
-            header('location: ./index.html?msg=error');
-        }
-        // Provjeravamo da li je korisnik čekirao checkbox
-        isset($_POST['dbr_zao']) ? $dobar = "Dobar" : $dobar = "Zao";
+        if (!(preg_match('/[^A-Ža-ž]/', $ime) || preg_match('/[^A-Ža-ž]/', $prezime))) {
+            // Provjeravamo da li je korisnik čekirao checkbox
+            isset($_POST['dbr_zao']) ? $dobar = "Dobar" : $dobar = "Zao";
 
-        // Pozivamo funkciju koja skladišti podatke i preusmjerava nas na zelja_poslata.html
-        sacuvajZelju($ime, $prezime, $grad, $zelja, $dobar);
-        header('location: ./zelja_poslata.html');
+            // Pozivamo funkciju koja skladišti podatke i preusmjerava nas na zelja_poslata.html
+            sacuvajZelju($ime, $prezime, $grad, $zelja, $dobar);
+            header('location: ./zelja_poslata.html');
+        } else {
+            header('location: ./index.html?msg=error');
+        }
     }
 } else {
     header('location: ./index.html');
